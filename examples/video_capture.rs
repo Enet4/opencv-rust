@@ -7,7 +7,7 @@ use opencv::videoio;
 fn run() -> Result<(),String> {
     let window = "video capture";
     try!(highgui::named_window(window,1));
-    let mut cam = try!(videoio::VideoCapture::index(1));
+    let mut cam = try!(videoio::VideoCapture::index(0));
     loop {
         let mut frame = try!(core::Mat::new());
         try!(cam.read(&mut frame));
