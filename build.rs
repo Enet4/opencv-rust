@@ -13,7 +13,7 @@ use std::io::Write;
 fn main() {
     let out_dir = std::env::var("OUT_DIR").unwrap();
 
-    let opencv = pkg_config::Config::new().find("opencv").unwrap();
+    let opencv = pkg_config::Config::new().find("opencv2").unwrap();
     let mut search_paths = opencv.include_paths.clone();
     search_paths.push(PathBuf::from("/usr/include"));
     let search_opencv = search_paths.iter().map( |p| {
@@ -111,7 +111,7 @@ fn main() {
 
     for ref module in &modules {
         let e = Command::new("sh").current_dir(&out_dir).arg("-c").arg(
-            format!("g++ {}.consts.cpp -o {}.consts `pkg-config --cflags --libs opencv`",
+            format!("g++ {}.consts.cpp -o {}.consts `pkg-config --cflags --libs opencv2`",
                 module.0, module.0)
         ).status().unwrap();
         assert!(e.success());
