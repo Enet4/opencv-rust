@@ -117,8 +117,8 @@ renamed_funcs = {
     "cv_split_Mat_src_Mat_mvbegin": "split_at",
     "cv_vconcat_Mat_src_size_t_nsrc_OutputArray_dst" : "-",
     # features2d
-    "cv_BOWKMeansTrainer_cluster": "default",
-    "cv_BOWKMeansTrainer_cluster_Mat_descriptors": "new",
+    "cv_BOWKMeansTrainer_cluster": "cluster",
+    "cv_BOWKMeansTrainer_cluster_Mat_descriptors": "cluster_with",
     "cv_BOWKMeansTrainer_BOWKMeansTrainer_int_clusterCount_TermCriteria_termcrit_int_attempts_int_flags": "new_with_criteria",
     "cv_DMatch_DMatch": "default",
     "cv_DMatch_DMatch_int__queryIdx_int__trainIdx_float__distance": "new",
